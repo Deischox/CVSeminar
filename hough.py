@@ -82,7 +82,7 @@ def line_detection_non_vectorized(image, edge_image, num_rhos=180, num_thetas=18
           accumulator[rho_idx][theta_idx] += 1
           ys.append(rho)
           xs.append(theta)
-        subplot3.plot(xs, ys, color="white", alpha=0.1)
+        subplot3.plot(xs, ys, color="white", alpha=0.01)
 
   for y in range(accumulator.shape[0]):
     for x in range(accumulator.shape[1]):
@@ -127,7 +127,7 @@ def start():
 
     plt.show()
 
-img2 = plt.imread("small.png")
+img2 = plt.imread("uni.png")
 img2 = color.rgb2gray(img2)
 edge = filters.sobel(img2)
 #edge = img2
@@ -139,7 +139,7 @@ for x in range(0,len(edge)):
         else:
             edge[x][y] = 0
 
-plt.imshow(edge)
+
 
 line_detection_non_vectorized(img2, edge, t_count=500)
 plt.show()
