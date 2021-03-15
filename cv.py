@@ -1,13 +1,14 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('s.jpg')
-img2 = cv2.imread('s.jpg')
-img3 = cv2.imread('s.jpg')
+img = cv2.imread('uni.jpg')
+img2 = cv2.imread('uni.jpg')
+img3 = cv2.imread('uni.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
 edges = cv2.Canny(gray, 50, 150, apertureSize=3)
 
-lines = cv2.HoughLines(edges, 1, np.pi / 180, 200)
+lines = cv2.HoughLines(edges, 1, np.pi / 180, 100)
 
 
 for line in lines:
